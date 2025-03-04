@@ -1,11 +1,11 @@
-name: Sync to S3
+name: Deploy to S3
 on:
   push:
     branches:
       - main
 
 jobs:
-  sync:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
@@ -18,5 +18,11 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
         aws-region: us-east-1
 
-    - name: Sync to S3
-      run: aws s3 sync . s3://22305x/Website-Code --exclude ".git/*"
+    - name: Sync Files to S3
+      run: aws s3 sync . s3://22305x --delete --exclude ".git/*"
+
+    - name: Set Public Read Permissions
+      run: aws s3 cp s3://22305x/ s3://22305x/ --recursive --acl public-read
+
+    - name: Output S3 Website URL
+      run: echo "Deployment successful! Visit:http://22305x.s3-website-us-east-1.amazonaws.com"
