@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raja Velu | DevOps Learner</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+        header {
+            background-color: #3a3f44;
+            color: #fff;
+            padding: 20px;
+            font-size: 24px;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .project-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            flex-wrap: wrap;
+        }
+        .project-description {
+            width: 48%;
+        }
+        .project-image {
+            width: 48%;
+        }
+        .project-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .project-title {
+            color: #007bff;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .github-link {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        /* Skills Section Styling */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .skills-list li {
+            background: #e9ecef;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>Raja Velu | DevOps Learner</header>
+    
+    <div class="container">
+        <section>
+            <div class="profile-container">
+                <img src="profile.jpg" alt="Raja Velu" class="profile-img">
+                <div>
+                    <h2>About Me</h2>
+                    <p>Aspiring DevOps Professional with strong foundational skills in cloud environments and relevant DevOps tools. Successfully transitioned from front-end development, acquiring proficiency in EC2, Linux, VPC, and Jenkins in just three months. Eager to contribute to dynamic DevOps teams by leveraging cloud infrastructure knowledge and automation expertise.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li><i class="fa-brands fa-linux"></i> Linux</li>
+                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                <li><i class="fa-solid fa-gears"></i> Jenkins</li>
+                <li><i class="fa-brands fa-aws"></i> AWS</li>
+                <li><i class="fa-solid fa-code"></i> Terraform</li>
+                <li><i class="fa-solid fa-cloud"></i> IAM, EC2, VPC, S3</li>
+                <li><i class="fa-brands fa-python"></i> Python</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2 class="project-title"><i class="fa-solid fa-sitemap"></i> Project</h2>
+            <div class="project-container">
+                <div class="project-description">
+                    <p><strong>AWS 3-Tier VPC Setup for Web Hosting</strong></p>
+                    <p>Designed and implemented a scalable, secure, and highly available 3-tier architecture using AWS VPC, subnets, route tables, and EC2 instances.</p>
+                    <a href="https://github.com/rajavelu22/AWS-3-Tier-Architecture.git" class="github-link" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a>
+                </div>
+                <div class="project-image">
+                    <img src="image.png" alt="AWS 3-Tier Architecture">
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:rajavelujansi@gmail.com">rajavelujansi@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/raja-velu-0b8992269">LinkedIn Profile</a></p>
+            <p>GitHub: <a href="https://github.com/rajavelu22">GitHub Profile</a></p>
+            
+            <h3>Leave a Comment</h3>
+            <form class="contact-form" action="https://formspree.io/f/mnqwwvpn" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
