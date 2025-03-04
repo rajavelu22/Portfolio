@@ -24,6 +24,3 @@ jobs:
       run: |
         aws s3 sync . s3://your-bucket-name --delete --exclude ".git/*"
         aws s3 cp s3://your-bucket-name/ s3://your-bucket-name/ --recursive --acl public-read
-
-    - name: Output S3 Website URL
-      run: echo "Deployment successful! Visit: http://your-bucket-name.s3-website-us-east-1.amazonaws.com"
