@@ -7,148 +7,320 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
+        /* ================================================== */
+        /*  CSS RESET & GLOBAL STYLES                       */
+        /* ================================================== */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f7f7f7, #eaeaea);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        a {
+            color: #e6e9ec;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #090a0a;
+        }
+        /* ================================================== */
+        /*  CONTAINER & LAYOUT                              */
+        /* ================================================== */
         .container {
-            width: 80%;
-            margin: auto;
-            text-align: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
         }
+        /* ================================================== */
+        /*  HEADER                                          */
+        /* ================================================== */
         header {
             background-color: #3a3f44;
             color: #fff;
             padding: 20px;
-            font-size: 24px;
-        }
-        section {
-            margin: 20px 0;
-            padding: 20px;
-            background: #fff;
+            text-align: center;
             border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
-        a {
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        nav a {
+            background-color: #007bff;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+        }
+        /* ================================================== */
+        /*  SECTIONS                                        */
+        /* ================================================== */
+        section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+        section h2 {
+            font-size: 28px;
             color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
         }
-        a:hover {
-            color: #0056b3;
-        }
+        /* ================================================== */
+        /*  ABOUT SECTION                                   */
+        /* ================================================== */
         .profile-container {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
         }
         .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
+            border: 4px solid #007bff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
             object-fit: cover;
         }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
+        .profile-text {
+            max-width: 600px;
+            text-align: left;
             padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
         }
-        .contact-form button {
+        /* ================================================== */
+        /*  SKILLS SECTION (TABLE)                          */
+        /* ================================================== */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .skills-table th, .skills-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        .skills-table th {
             background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            color: #fff;
         }
+        .skills-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        /* ================================================== */
+        /*  PROJECT SECTION                                 */
+        /* ================================================== */
         .project-container {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            text-align: left;
             flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
         }
         .project-description {
             width: 48%;
+            text-align: left;
+        }
+        .project-description p {
+            margin: 10px 0;
         }
         .project-image {
             width: 48%;
+            text-align: center;
         }
         .project-image img {
-            width: 100%;
+            width: 100%;    
             border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
-        .project-title {
-            color: #007bff;
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .project-image img:hover {
+            transform: scale(1.02);
         }
         .github-link {
             display: inline-block;
             background-color: #007bff;
-            color: white;
+            color: #fafafa;
             padding: 10px 15px;
             border-radius: 5px;
-            margin-top: 10px;
+            margin-top: 15px;
+            transition: background 0.3s;
         }
-        /* Skills Section Styling */
-        .skills-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+        .github-link:hover {
+            background-color: #0056b3;
         }
-        .skills-list li {
-            background: #e9ecef;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        /* ================================================== */
+        /*  CONTACT SECTION                                 */
+        /* ================================================== */
+        .x{
+            color:black;
         }
+        .x:hover{
+            color:#007bff;
+        }
+        .contact-info p {
+            margin: 10px 0;
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #fdfcfc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #007bff;
+        }
+        .contact-form button {
+            background-color: #007bff;
+            color: #fcf9f9;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+        /* ================================================== */
+        /*  FOOTER                                          */
+        /* ================================================== */
+        footer {
+            background-color: #3a3f44;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+        /* ================================================== */
+        /*  MEDIA QUERIES                                   */
+        /* ================================================== */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .project-description, .project-image {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        /* ================================================== */
+        /*  ANIMATIONS & UTILITIES                          */
+        /* ================================================== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-20 { margin-bottom: 20px; }
+        .mt-20 { margin-top: 20px; }
+        .rounded { border-radius: 10px; }
+        .shadow { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
-    <header>Raja Velu | DevOps Learner</header>
-    
+    <!-- HEADER -->
+    <header class="fade-in">
+        <h1>Raja Velu | DevOps Learner</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#project">Project</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTAINER -->
     <div class="container">
-        <section>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="fade-in">
             <div class="profile-container">
                 <img src="profile.jpg" alt="Raja Velu" class="profile-img">
-                <div>
+                <div class="profile-text">
                     <h2>About Me</h2>
-                    <p>Aspiring DevOps Professional with strong foundational skills in cloud environments and relevant DevOps tools. Successfully transitioned from front-end development, acquiring proficiency in EC2, Linux, VPC, and Jenkins in just three months. Eager to contribute to dynamic DevOps teams by leveraging cloud infrastructure knowledge and automation expertise.</p>
+                    <p>Aspiring DevOps Professional with strong foundational skills in cloud environments and DevOps tools. Transitioned from front-end development to master technologies like EC2, Linux, VPC, and Jenkins in just three months. I am passionate about leveraging automation and cloud infrastructure to drive innovation and efficiency.</p>
                 </div>
             </div>
         </section>
-        
-        <section>
+
+        <!-- SKILLS SECTION (TABLE) -->
+        <section id="skills" class="fade-in">
             <h2>Skills</h2>
-            <ul class="skills-list">
-                <li><i class="fa-brands fa-linux"></i> Linux</li>
-                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
-                <li><i class="fa-solid fa-gears"></i> Jenkins</li>
-                <li><i class="fa-brands fa-aws"></i> AWS</li>
-                <li><i class="fa-solid fa-code"></i> Terraform</li>
-                <li><i class="fa-solid fa-cloud"></i> IAM, EC2, VPC, S3</li>
-                <li><i class="fa-brands fa-python"></i> Python</li>
-            </ul>
+            <table class="skills-table">
+                <tr>
+                    <td>Linux</td>
+                    <td><i class="fa-brands fa-linux"></i></td>
+                </tr>
+                <tr>
+                    <td>Git &amp; GitHub</td>
+                    <td><i class="fa-brands fa-git-alt"></i></td>
+                </tr>
+                <tr>
+                    <td>Jenkins</td>
+                    <td><i class="fa-solid fa-gears"></i></td>
+                </tr>
+                <tr>
+                    <td>AWS (IAM, EC2, VPC, S3)</td>
+                    <td><i class="fa-brands fa-aws"></i></td>
+                </tr>
+                <tr>
+                    <td>Terraform</td>
+                    <td><i class="fa-solid fa-code"></i></td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td><i class="fa-brands fa-python"></i></td>
+                </tr>
+            </table>
         </section>
-        
-        <section>
-            <h2 class="project-title"><i class="fa-solid fa-sitemap"></i> Project</h2>
+
+        <!-- PROJECT SECTION -->
+        <section id="project" class="fade-in">
+            <h2><i class="fa-solid fa-sitemap"></i> Project</h2>
             <div class="project-container">
                 <div class="project-description">
                     <p><strong>AWS 3-Tier VPC Setup for Web Hosting</strong></p>
@@ -160,21 +332,30 @@
                 </div>
             </div>
         </section>
-        
-        <section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="fade-in">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:rajavelujansi@gmail.com">rajavelujansi@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/raja-velu-0b8992269">LinkedIn Profile</a></p>
-            <p>GitHub: <a href="https://github.com/rajavelu22">GitHub Profile</a></p>
-            
-            <h3>Leave a Comment</h3>
-            <form class="contact-form" action="https://formspree.io/f/mnqwwvpn" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit">Send</button>
-            </form>
+            <div class="contact-info">
+                <p >Email: <a class="x" href="mailto:rajavelujansi@gmail.com">rajavelujansi@gmail.com</a></p>
+                <p>LinkedIn: <a class="x" href="https://linkedin.com/in/raja-velu-0b8992269">LinkedIn Profile</a></p>
+                <p>GitHub: <a class="x" href="https://github.com/rajavelu22">GitHub Profile</a></p>
+            </div>
+            <div class="contact-form">
+                <h3>Leave a Comment</h3>
+                <form action="https://formspree.io/f/mnqwwvpn" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
         </section>
     </div>
+
+    <!-- FOOTER -->
+    <footer class="fade-in">
+        <p>&copy; 2023 Raja Velu. All rights reserved.</p>
+    </footer>
 </body>
 </html>
